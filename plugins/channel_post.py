@@ -9,7 +9,7 @@ from helper_func import encode
 
 @Bot.on_message(filters.private & filters.user(ADMINS) & ~filters.command(['start','users','broadcast','batch','genlink','upload']))
 async def channel_post(client: Client, message: Message):
-    reply_text = await message.reply_text("<b>Vui lòng chờ...!</b>", quote = True)
+    #reply_text = await message.reply_text("<b>Vui lòng chờ...!</b>", quote = True)
     try:
         post_message = await message.copy(chat_id = client.db_channel.id, disable_notification=True)
     except FloodWait as e:
